@@ -16,7 +16,7 @@ from __future__ import annotations
 from datetime import date, datetime, time
 from typing import Optional
 
-from fastapi import APIRouter, Depends, HTTPException, Query, status
+from fastapi import APIRouter, Depends, HTTPException, Query, Response, status
 from sqlalchemy.orm import Session
 
 from api.database import get_db
@@ -85,14 +85,18 @@ def _day_status(d: date, db: Session) -> DayStatus:
 
 @router.get("/calendar", response_model=dict[str, DayStatus])
 async def get_calendar(
-    year:  int = Query(..., ge=2024, le=2100),
-    month: int = Query(..., ge=1,    le=12),
-    db:    Session = Depends(get_db),
+    year:     int      = Query(..., ge=2024, le=2100),
+    month:    int      = Query(..., ge=1,    le=12),
+    db:       Session  = Depends(get_db),
+    response: Response = None,
 ) -> dict[str, DayStatus]:
     """
     Return the availability state for every day in the requested month.
     Past days are omitted. Keys are 'YYYY-MM-DD' strings.
     """
+    if response:
+        response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate"
+
     today      = datetime.utcnow().date()
     days_count = (date(year, month % 12 + 1, 1) - date(year, month, 1)).days \
                  if month < 12 else 31  # December has 31 days

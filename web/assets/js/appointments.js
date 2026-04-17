@@ -228,7 +228,8 @@ function renderCalendar() {
 async function fetchAvailability() {
   try {
     const res = await fetch(
-      `${CFG.API}/appointments/calendar?year=${S.year}&month=${S.month + 1}`
+      `${CFG.API}/appointments/calendar?year=${S.year}&month=${S.month + 1}`,
+      { cache: 'no-store' }
     );
     if (!res.ok) throw new Error('API error');
     S.avail = await res.json();
