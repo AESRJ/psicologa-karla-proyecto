@@ -86,10 +86,20 @@ def _day_status(d: date, db: Session) -> DayStatus:
 @router.get("/debug")
 async def debug_db(db: Session = Depends(get_db)):
     """Muestra el estado real de la BD — solo para diagnóstico."""
+    import os
     total = db.query(Appointment).count()
     sample = db.query(Appointment).order_by(Appointment.id.desc()).limit(10).all()
+
+    resend_key = os.getenv("RESEND_API_KEY", "")
+    smtp_from  = os.getenv("SMTP_FROM", "")
+
     return {
         "total_appointments": total,
+        "email_config": {
+            "resend_key_set":    bool(resend_key),
+            "resend_key_prefix": resend_key[:10] + "..." if resend_key else None,
+            "smtp_from":         smtp_from or "(no configurado)",
+        },
         "last_10": [
             {
                 "id":     a.id,
@@ -97,6 +107,7 @@ async def debug_db(db: Session = Depends(get_db)):
                 "time":   str(a.appointment_time),
                 "status": a.status,
                 "name":   a.patient_name,
+                "email":  a.patient_email or "(sin correo)",
             }
             for a in sample
         ],
