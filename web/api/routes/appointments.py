@@ -13,7 +13,7 @@ Routes:
 
 from __future__ import annotations
 
-from datetime import date, datetime, time
+from datetime import date, time
 from typing import Optional
 
 from fastapi import APIRouter, Depends, HTTPException, Query, Response, status
@@ -119,19 +119,12 @@ async def get_calendar(
     if response:
         response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate"
 
-    today      = datetime.utcnow().date()
-    days_count = (date(year, month % 12 + 1, 1) - date(year, month, 1)).days \
-                 if month < 12 else 31  # December has 31 days
-
-    # Use a robust approach to find month length
     import calendar as cal_mod
     days_count = cal_mod.monthrange(year, month)[1]
 
     result: dict[str, DayStatus] = {}
     for d in range(1, days_count + 1):
         day = date(year, month, d)
-        if day < today:
-            continue
         result[day.isoformat()] = _day_status(day, db)
 
     return result
