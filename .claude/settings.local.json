@@ -22,7 +22,8 @@
       "Bash(git push *)",
       "Bash(lsof -t -i:8000)",
       "Bash(git add *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "WebFetch(domain:psicologa-karla-proyecto-production.up.railway.app)"
     ]
   }
 }
