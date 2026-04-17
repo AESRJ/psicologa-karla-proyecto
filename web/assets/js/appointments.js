@@ -461,6 +461,9 @@ function showConfirmation() {
         <p>${CFG.labels[S.therapy]}</p>
         <p>$${CFG.prices[S.therapy].toLocaleString('es-MX')} MXN</p>
       </div>
+      <button class="bk-confirm__new" onclick="window.location.reload()">
+        Agendar otra cita
+      </button>
     </div>
   `;
 }

@@ -582,6 +582,24 @@
   line-height: 2;
 }
 
+.bk-confirm__new {
+  margin-top: 28px;
+  padding: 12px 32px;
+  background: transparent;
+  border: 1px solid var(--accent-line);
+  color: var(--white-dim);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.bk-confirm__new:hover {
+  border-color: var(--white);
+  color: var(--white);
+}
+
 /* ── Responsive ───────────────────────────────────────────── */
 
 @media (max-width: 700px) {

@@ -75,10 +75,10 @@ def _day_status(d: date, db: Session) -> DayStatus:
     free   = total - booked
 
     if free <= 0:
-        return DayStatus.unavailable          # rojo  — sin horarios
-    if booked == 0:
-        return DayStatus.available            # verde  — día completamente libre
-    return DayStatus.limited                  # amarillo — al menos una cita reservada
+        return DayStatus.unavailable          # rojo   — sin horarios disponibles
+    if booked < 2:
+        return DayStatus.available            # verde  — 0 o 1 cita reservada
+    return DayStatus.limited                  # amarillo — 2 o más citas reservadas
 
 
 # ── Calendar endpoint ──────────────────────────────────────────────────────
