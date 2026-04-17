@@ -16,7 +16,7 @@ from __future__ import annotations
 from datetime import date, time
 from typing import Optional
 
-from fastapi import APIRouter, Depends, HTTPException, Query, Response, status
+from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, Query, Response, status
 from sqlalchemy.orm import Session
 
 from api.database import get_db
@@ -150,8 +150,9 @@ async def get_slots(
 
 @router.post("/", response_model=AppointmentOut, status_code=status.HTTP_201_CREATED)
 async def create_appointment(
-    payload: AppointmentCreate,
-    db:      Session = Depends(get_db),
+    payload:    AppointmentCreate,
+    background: BackgroundTasks,
+    db:         Session = Depends(get_db),
 ) -> AppointmentOut:
     """Book a new appointment."""
     # Verify slot is still free
@@ -193,8 +194,8 @@ async def create_appointment(
     db.commit()
     db.refresh(record)
 
-    # Enviar correo de confirmación (no bloquea si falla)
-    send_confirmation(record)
+    # Enviar correo en segundo plano — no bloquea la respuesta
+    background.add_task(send_confirmation, record)
 
     return _to_out(record)
 
