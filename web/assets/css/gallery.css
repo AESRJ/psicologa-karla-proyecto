@@ -1,0 +1,101 @@
+/* ================================================================
+   GALLERY — hero slideshow
+   ================================================================ */
+
+#gallery {
+  position: relative;
+  width: 100%;
+  height: 88vh;
+  overflow: hidden;
+  background: var(--navy-dark);
+  /* override section default padding */
+  padding: 0;
+}
+
+/* Slides ─────────────────────────────────────────────────────── */
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.55);
+}
+
+/* Colour placeholder blocks (shown until real images are added) */
+.slide-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-placeholder span {
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--white-dim);
+}
+
+.slide:nth-child(1) .slide-placeholder { background: #112b5e; }
+.slide:nth-child(2) .slide-placeholder { background: #0e2454; }
+.slide:nth-child(3) .slide-placeholder { background: #0b1e46; }
+.slide:nth-child(4) .slide-placeholder { background: #0d2660; }
+
+/* Overlay caption ───────────────────────────────────────────── */
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.gallery-overlay p {
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--white-dim);
+}
+
+/* Navigation dots ───────────────────────────────────────────── */
+
+.gallery-dots {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--white-dim);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.dot.active {
+  background: var(--white);
+  transform: scale(1.3);
+}

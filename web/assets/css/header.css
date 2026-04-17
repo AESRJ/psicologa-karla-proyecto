@@ -1,0 +1,76 @@
+/* ================================================================
+   HEADER & NAV
+   ================================================================ */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--spacing-lg);
+  height: var(--header-height);
+  background: var(--navy-dark);
+  border-bottom: 1px solid var(--accent-line);
+}
+
+/* Brand ──────────────────────────────────────────────────────── */
+
+.header-brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.header-brand::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: var(--white);
+  margin-bottom: 6px;
+}
+
+.header-brand .brand-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.header-brand .brand-title {
+  font-size: 0.65rem;
+  font-weight: 300;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--white-dim);
+}
+
+/* Navigation ─────────────────────────────────────────────────── */
+
+nav {
+  display: flex;
+  gap: 6px;
+}
+
+nav a {
+  display: inline-block;
+  padding: var(--spacing-xs) 20px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--white-dim);
+  text-decoration: none;
+  border-radius: 2px;
+  transition: color 0.2s, background 0.2s;
+}
+
+nav a:hover {
+  color: var(--white);
+  background: var(--white-faint);
+}

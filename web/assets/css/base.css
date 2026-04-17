@@ -1,0 +1,58 @@
+/* ================================================================
+   BASE — reset, body, shared section components
+   ================================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--navy);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+main {
+  padding-top: var(--header-height);
+}
+
+/* ── Shared section layout ─────────────────────────────────── */
+
+section {
+  padding: var(--spacing-2xl) var(--section-padding-x);
+}
+
+.section-label {
+  font-size: 0.65rem;
+  font-weight: 300;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--white-dim);
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: var(--white);
+  margin-top: 14px;
+}

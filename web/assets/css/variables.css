@@ -1,0 +1,30 @@
+/* ================================================================
+   DESIGN TOKENS
+   Paleta extraída del branding de Karla Zermeño — Psicóloga
+   ================================================================ */
+
+:root {
+  /* Colour palette */
+  --navy:        #0D2461;
+  --navy-light:  #14306e;
+  --navy-dark:   #091a47;
+  --white:       #ffffff;
+  --white-dim:   rgba(255, 255, 255, 0.75);
+  --white-faint: rgba(255, 255, 255, 0.12);
+  --accent-line: rgba(255, 255, 255, 0.35);
+
+  /* Typography */
+  --font-family: 'Montserrat', sans-serif;
+
+  /* Spacing scale */
+  --spacing-xs:  8px;
+  --spacing-sm:  16px;
+  --spacing-md:  32px;
+  --spacing-lg:  48px;
+  --spacing-xl:  64px;
+  --spacing-2xl: 96px;
+
+  /* Layout */
+  --header-height: 72px;
+  --section-padding-x: 10%;
+}

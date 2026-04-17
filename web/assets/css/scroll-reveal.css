@@ -1,0 +1,50 @@
+/* ================================================================
+   SCROLL REVEAL
+   Estado inicial: invisible + desplazado + difuminado.
+   Cuando el IntersectionObserver añade .is-visible la transición
+   lleva cada elemento a su posición y opacidad final.
+   ================================================================ */
+
+/* ── Estado inicial (oculto) ──────────────────────────────── */
+
+.reveal {
+  opacity: 0;
+  filter: blur(6px);
+  transform: translateY(32px);
+  transition:
+    opacity  0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    filter   0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  /* respeta preferencias de movimiento reducido */
+  will-change: opacity, filter, transform;
+}
+
+/* Variante lateral — imagen de quién soy entra desde la derecha */
+.reveal--right {
+  transform: translateX(40px) translateY(0);
+}
+
+/* ── Estado final (visible) ───────────────────────────────── */
+
+.reveal.is-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate(0, 0);
+}
+
+/* ── Retardo escalonado para grupos (tarjetas de terapias) ── */
+
+.reveal[data-delay="1"] { transition-delay: 0.10s; }
+.reveal[data-delay="2"] { transition-delay: 0.22s; }
+.reveal[data-delay="3"] { transition-delay: 0.34s; }
+
+/* ── Accesibilidad: sin animación si el usuario lo prefiere ─ */
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    transition: none;
+  }
+}

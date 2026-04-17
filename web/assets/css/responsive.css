@@ -1,0 +1,56 @@
+/* ================================================================
+   RESPONSIVE — breakpoints
+   ================================================================ */
+
+@media (max-width: 900px) {
+  header {
+    padding: 0 24px;
+  }
+
+  nav a {
+    padding: var(--spacing-xs) 12px;
+    letter-spacing: 0.1em;
+  }
+
+  section {
+    padding: 72px 6%;
+  }
+
+  .quien-soy-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .quien-soy-image {
+    order: -1;
+    max-width: 320px;
+  }
+
+  .terapias-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contacto-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-brand .brand-name {
+    font-size: 0.75rem;
+  }
+
+  nav {
+    gap: 2px;
+  }
+
+  nav a {
+    padding: var(--spacing-xs) var(--spacing-xs);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+}

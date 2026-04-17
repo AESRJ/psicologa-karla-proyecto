@@ -1,0 +1,45 @@
+# ── Python ────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Entornos virtuales ────────────────────────────────────────
+venv/
+.venv/
+env/
+.env/
+
+# ── Variables de entorno (secretos) ──────────────────────────
+.env
+.env.local
+.env.production
+
+# ── Base de datos local ───────────────────────────────────────
+*.db
+*.sqlite
+*.sqlite3
+
+# ── Logs ──────────────────────────────────────────────────────
+*.log
+logs/
+
+# ── Sistema operativo ─────────────────────────────────────────
+.DS_Store
+.DS_Store?
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ── IDEs ──────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── Railway / deploy ──────────────────────────────────────────
+.railway/

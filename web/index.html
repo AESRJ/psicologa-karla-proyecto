@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karla Ivett Sánchez Zermeño — Psicóloga</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Styles — loaded in dependency order -->
+  <link rel="stylesheet" href="assets/css/variables.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/header.css" />
+  <link rel="stylesheet" href="assets/css/gallery.css" />
+  <link rel="stylesheet" href="assets/css/sections.css" />
+  <link rel="stylesheet" href="assets/css/appointments.css" />
+  <link rel="stylesheet" href="assets/css/scroll-reveal.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════ HEADER -->
+  <header>
+    <div class="header-brand">
+      <span class="brand-name">Karla Ivett Sánchez Zermeño</span>
+      <span class="brand-title">Psicóloga</span>
+    </div>
+    <nav>
+      <a href="#quien-soy">Quién soy</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#agendar-cita">Agendar cita</a>
+      <a href="#ubicacion">Ubicación</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════════════ GALERÍA -->
+    <section id="gallery" aria-label="Galería de imágenes">
+
+      <div class="slide active">
+        <!-- <img src="assets/img/galeria-1.jpg" alt="Consultorio" /> -->
+        <div class="slide-placeholder"><span>Imagen 1</span></div>
+      </div>
+
+      <div class="slide">
+        <!-- <img src="assets/img/galeria-2.jpg" alt="Terapia" /> -->
+        <div class="slide-placeholder"><span>Imagen 2</span></div>
+      </div>
+
+      <div class="slide">
+        <!-- <img src="assets/img/galeria-3.jpg" alt="Consultorio" /> -->
+        <div class="slide-placeholder"><span>Imagen 3</span></div>
+      </div>
+
+      <div class="slide">
+        <!-- <img src="assets/img/galeria-4.jpg" alt="Sesión" /> -->
+        <div class="slide-placeholder"><span>Imagen 4</span></div>
+      </div>
+
+      <div class="gallery-overlay">
+        <p>Psicología · Bienestar · Crecimiento personal</p>
+      </div>
+
+      <div class="gallery-dots" id="gallery-dots">
+        <div class="dot active" data-index="0"></div>
+        <div class="dot" data-index="1"></div>
+        <div class="dot" data-index="2"></div>
+        <div class="dot" data-index="3"></div>
+      </div>
+
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ QUIÉN SOY -->
+    <section id="quien-soy">
+      <p class="section-label reveal">Mi historia</p>
+      <h2 class="section-title reveal" data-delay="1">Conóceme</h2>
+
+      <div class="quien-soy-inner">
+
+        <div class="quien-soy-text reveal" data-delay="2">
+          <p>
+            Soy Karla Ivett Sánchez Zermeño, psicóloga comprometida con el bienestar emocional
+            y el crecimiento personal de cada uno de mis pacientes. Mi enfoque integrador me
+            permite adaptar el proceso terapéutico a las necesidades únicas de cada persona.
+          </p>
+          <p>
+            Cuento con formación sólida en psicología clínica y experiencia acompañando a
+            individuos, parejas y familias en sus procesos de cambio. Creo firmemente en que
+            la salud mental es la base de una vida plena y equilibrada.
+          </p>
+          <p>
+            Mi espacio de consulta es un lugar seguro, libre de juicios, donde podrás
+            explorar tus emociones, sanar heridas del pasado y construir las herramientas
+            que necesitas para vivir mejor.
+          </p>
+        </div>
+
+        <div class="quien-soy-image reveal reveal--right" data-delay="3">
+          <div class="img-frame">
+            <!-- <img src="assets/img/karla-foto.jpg" alt="Karla Ivett Sánchez Zermeño" /> -->
+            <div class="img-placeholder"><span>Foto</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ TERAPIAS -->
+    <section id="terapias">
+      <p class="section-label reveal">Modalidades</p>
+      <h2 class="section-title reveal" data-delay="1">Terapias</h2>
+
+      <div class="terapias-grid">
+
+        <div class="terapia-card reveal" data-delay="1">
+          <span class="terapia-icon">&#9679;</span>
+          <h3>Terapia Individual</h3>
+          <p>
+            Un espacio personal y confidencial para explorar tus emociones, pensamientos
+            y conductas. Trabajamos juntos en tu bienestar emocional, autoconocimiento
+            y el desarrollo de herramientas para afrontar los desafíos de la vida cotidiana.
+          </p>
+        </div>
+
+        <div class="terapia-card reveal" data-delay="2">
+          <span class="terapia-icon">&#9679;</span>
+          <h3>Terapia en Pareja</h3>
+          <p>
+            Acompañamos a las parejas en la mejora de su comunicación, resolución de
+            conflictos y fortalecimiento del vínculo. El objetivo es construir una
+            relación más sana, consciente y satisfactoria para ambos.
+          </p>
+        </div>
+
+        <div class="terapia-card reveal" data-delay="3">
+          <span class="terapia-icon">&#9679;</span>
+          <h3>Terapia en Familia</h3>
+          <p>
+            Trabajamos con la familia como sistema, identificando patrones de relación
+            y fomentando dinámicas más saludables. Juntos construimos un ambiente de
+            mayor comprensión, respeto y bienestar para todos sus integrantes.
+          </p>
+        </div>
+
+        <div class="terapia-card reveal" data-delay="1">
+          <span class="terapia-icon">&#9679;</span>
+          <h3>Terapia para Adolescentes</h3>
+          <p>
+            Un espacio de escucha y acompañamiento especializado para jóvenes en etapa
+            de desarrollo. Abordamos identidad, emociones, vínculos y los retos propios
+            de la adolescencia con un enfoque cercano y libre de juicios.
+          </p>
+        </div>
+
+        <div class="terapia-card reveal" data-delay="2">
+          <span class="terapia-icon">&#9679;</span>
+          <h3>Terapia en Línea</h3>
+          <p>
+            Accede al proceso terapéutico desde la comodidad de tu hogar. Las sesiones
+            en línea ofrecen la misma calidad y confidencialidad que la consulta
+            presencial, adaptadas a tu ritmo y disponibilidad.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ AGENDAR CITA -->
+    <section id="agendar-cita">
+      <p class="section-label reveal">Reserva tu espacio</p>
+      <h2 class="section-title reveal" data-delay="1">Agendar Cita</h2>
+
+      <div id="booking-widget" class="reveal" data-delay="2">
+
+        <!-- ── Barra de progreso ─────────────────────────── -->
+        <nav class="booking-steps" aria-label="Pasos del agendamiento">
+          <div class="bk-step bk-step--active" data-step="1">
+            <span class="bk-step__num">1</span>
+            <span class="bk-step__label">Fecha</span>
+          </div>
+          <div class="bk-step__line"></div>
+          <div class="bk-step" data-step="2">
+            <span class="bk-step__num">2</span>
+            <span class="bk-step__label">Horario</span>
+          </div>
+          <div class="bk-step__line"></div>
+          <div class="bk-step" data-step="3">
+            <span class="bk-step__num">3</span>
+            <span class="bk-step__label">Modalidad</span>
+          </div>
+          <div class="bk-step__line"></div>
+          <div class="bk-step" data-step="4">
+            <span class="bk-step__num">4</span>
+            <span class="bk-step__label">Datos</span>
+          </div>
+          <div class="bk-step__line"></div>
+          <div class="bk-step" data-step="5">
+            <span class="bk-step__num">5</span>
+            <span class="bk-step__label">Resumen</span>
+          </div>
+        </nav>
+
+        <!-- ── Paso 1: Calendario ────────────────────────── -->
+        <div class="bk-panel active" data-step="1">
+          <div id="cal-root"></div>
+        </div>
+
+        <!-- ── Paso 2: Horarios ──────────────────────────── -->
+        <div class="bk-panel" data-step="2">
+          <div id="slots-root"></div>
+        </div>
+
+        <!-- ── Paso 3: Modalidad ─────────────────────────── -->
+        <div class="bk-panel" data-step="3">
+          <button class="bk-back" id="therapy-back">&#8592; Cambiar horario</button>
+          <p class="bk-step-subtitle">Selecciona el tipo de terapia</p>
+
+          <div class="therapy-options">
+
+            <div class="therapy-option" data-therapy="individual" role="button" tabindex="0">
+              <div class="therapy-option__name">Terapia Individual</div>
+              <div class="therapy-option__price">$600</div>
+              <div class="therapy-option__price-unit">MXN por sesión</div>
+            </div>
+
+            <div class="therapy-option" data-therapy="pareja" role="button" tabindex="0">
+              <div class="therapy-option__name">Terapia en Pareja</div>
+              <div class="therapy-option__price">$800</div>
+              <div class="therapy-option__price-unit">MXN por sesión</div>
+            </div>
+
+            <div class="therapy-option" data-therapy="familia" role="button" tabindex="0">
+              <div class="therapy-option__name">Terapia Familiar</div>
+              <div class="therapy-option__price">$1,000</div>
+              <div class="therapy-option__price-unit">MXN por sesión</div>
+            </div>
+
+            <div class="therapy-option" data-therapy="adolescentes" role="button" tabindex="0">
+              <div class="therapy-option__name">Terapia para Adolescentes</div>
+              <div class="therapy-option__price">$600</div>
+              <div class="therapy-option__price-unit">MXN por sesión</div>
+            </div>
+
+            <div class="therapy-option" data-therapy="online" role="button" tabindex="0">
+              <div class="therapy-option__name">Terapia en Línea</div>
+              <div class="therapy-option__price">$600</div>
+              <div class="therapy-option__price-unit">MXN por sesión</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ── Paso 4: Datos personales ──────────────────── -->
+        <div class="bk-panel" data-step="4">
+          <button class="bk-back" id="personal-back">&#8592; Cambiar modalidad</button>
+          <p class="bk-step-subtitle">Tus datos de contacto</p>
+
+          <div class="bk-form">
+            <div class="bk-field">
+              <label class="bk-label" for="input-name">Nombre completo</label>
+              <input class="bk-input" id="input-name" type="text"
+                     autocomplete="name" placeholder="Tu nombre" />
+              <span class="field-error"></span>
+            </div>
+            <div class="bk-field">
+              <label class="bk-label" for="input-phone">Número de contacto</label>
+              <input class="bk-input" id="input-phone" type="tel"
+                     autocomplete="tel" placeholder="+52 646 000 0000" />
+              <span class="field-error"></span>
+            </div>
+            <div class="bk-field">
+              <label class="bk-label" for="input-email">Correo electrónico <span style="font-weight:300;letter-spacing:0">(opcional — para confirmación)</span></label>
+              <input class="bk-input" id="input-email" type="email"
+                     autocomplete="email" placeholder="tucorreo@ejemplo.com" />
+              <span class="field-error"></span>
+            </div>
+            <div class="bk-form-actions">
+              <button class="btn-reserve" id="personal-next">Continuar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Paso 5: Resumen ───────────────────────────── -->
+        <div class="bk-panel" data-step="5">
+          <button class="bk-back" id="summary-back">&#8592; Editar datos</button>
+          <p class="bk-step-subtitle">Confirma los detalles de tu cita</p>
+
+          <div class="summary-box">
+            <div class="summary-row">
+              <span class="summary-row__label">Fecha</span>
+              <span class="summary-row__value" id="sum-date">—</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-row__label">Horario</span>
+              <span class="summary-row__value" id="sum-time">—</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-row__label">Modalidad</span>
+              <span class="summary-row__value" id="sum-therapy">—</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-row__label">Nombre</span>
+              <span class="summary-row__value" id="sum-name">—</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-row__label">Contacto</span>
+              <span class="summary-row__value" id="sum-phone">—</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-row__label">Correo</span>
+              <span class="summary-row__value" id="sum-email">—</span>
+            </div>
+            <div class="summary-row summary-row--total">
+              <span class="summary-row__label">Total</span>
+              <span class="summary-row__value" id="sum-price">—</span>
+            </div>
+          </div>
+
+          <button class="btn-reserve" id="btn-reserve">Reservar Cita</button>
+          <span class="reserve-error" id="reserve-error"></span>
+        </div>
+
+      </div><!-- #booking-widget -->
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ CONTACTO -->
+    <section id="contacto">
+      <p class="section-label reveal">Escríbeme</p>
+      <h2 class="section-title reveal" data-delay="1">Contacto</h2>
+
+      <div class="contacto-grid">
+        <div class="contacto-info reveal" data-delay="2">
+          <div class="contacto-dato">
+            <span class="contacto-dato__label">Teléfono</span>
+            <a class="contacto-dato__value" href="tel:6465025851">(646) 502 5851</a>
+          </div>
+          <div class="contacto-dato">
+            <span class="contacto-dato__label">Correo</span>
+            <a class="contacto-dato__value contacto-dato__value--email"
+               href="mailto:karlasanchez.j@gmail.com">karlasanchez.j@gmail.com</a>
+          </div>
+          <div class="contacto-dato">
+            <span class="contacto-dato__label">Instagram</span>
+            <a class="contacto-dato__value" href="https://instagram.com/karlazzermeno"
+               target="_blank" rel="noopener">@karlazzermeno</a>
+          </div>
+
+          <a href="https://wa.me/526465025851"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="btn-whatsapp">
+            <svg class="btn-whatsapp__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Escríbenos por WhatsApp
+          </a>
+        </div>
+        <div></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ UBICACIÓN -->
+    <section id="ubicacion">
+      <p class="section-label reveal">Encuéntrame</p>
+      <h2 class="section-title reveal" data-delay="1">Ubicación</h2>
+
+      <div class="ubicacion-inner">
+
+        <div class="mapa-wrapper reveal" data-delay="2">
+          <iframe
+            src="https://maps.google.com/maps?q=Blvd.+Zertuche+101,+Vista+Hermosa,+22785+Ensenada,+Baja+California,+Mexico&output=embed&z=16"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Ubicación del consultorio — Blvd. Zertuche 101, Ensenada"
+          ></iframe>
+        </div>
+
+        <div class="ubicacion-info reveal" data-delay="3">
+
+          <div class="ubicacion-dato">
+            <span class="dato-label">Dirección</span>
+            <span class="dato-value">
+              Blvd. Zertuche 101<br>
+              Vista Hermosa, 22785<br>
+              Ensenada, B.C.
+            </span>
+          </div>
+
+          <div class="ubicacion-dato">
+            <span class="dato-label">Referencia</span>
+            <span class="dato-value">Atrás de Víctor Restaurante</span>
+          </div>
+
+          <div class="ubicacion-dato">
+            <span class="dato-label">Horario</span>
+            <span class="dato-value">
+              Lunes – Viernes<br>
+              9:00 – 18:00
+            </span>
+          </div>
+
+          <a
+            href="https://maps.google.com/maps?q=Blvd.+Zertuche+101,+Vista+Hermosa,+22785+Ensenada,+Baja+California,+Mexico"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-maps"
+          >
+            Abrir en Google Maps
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════ FOOTER -->
+  <footer>
+    <p>&copy; 2025 Karla Ivett Sánchez Zermeño &mdash; Psicóloga</p>
+    <p>Todos los derechos reservados</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/gallery.js?v=2"></script>
+  <script src="assets/js/appointments.js?v=2"></script>
+  <script src="assets/js/scroll-reveal.js?v=2"></script>
+
+</body>
+</html>

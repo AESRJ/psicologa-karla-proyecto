@@ -1,0 +1,355 @@
+/* ================================================================
+   SECTIONS — quién soy · terapias · contacto · cita · ubicación · footer
+   ================================================================ */
+
+/* ── Quién soy ─────────────────────────────────────────────── */
+
+#quien-soy {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--accent-line);
+}
+
+.quien-soy-inner {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: var(--spacing-xl);
+  align-items: start;
+}
+
+.quien-soy-text p {
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--white-dim);
+  max-width: 580px;
+}
+
+.quien-soy-text p + p {
+  margin-top: 18px;
+}
+
+/* Photo frame with corner decoration */
+.quien-soy-image {
+  position: relative;
+}
+
+.quien-soy-image .img-frame {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: var(--navy-light);
+  overflow: hidden;
+  position: relative;
+}
+
+.quien-soy-image .img-frame::before,
+.quien-soy-image .img-frame::after {
+  content: '';
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-color: var(--white);
+  border-style: solid;
+  z-index: 2;
+}
+
+.quien-soy-image .img-frame::before {
+  top: -8px;
+  left: -8px;
+  border-width: 2px 0 0 2px;
+}
+
+.quien-soy-image .img-frame::after {
+  bottom: -8px;
+  right: -8px;
+  border-width: 0 2px 2px 0;
+}
+
+.quien-soy-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.img-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--navy-light);
+}
+
+.img-placeholder span {
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--white-dim);
+}
+
+/* ── Terapias ──────────────────────────────────────────────── */
+
+#terapias {
+  background: var(--navy-dark);
+  border-top: 1px solid var(--accent-line);
+}
+
+.terapias-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-sm);
+}
+
+.terapia-card {
+  border: 1px solid var(--accent-line);
+  padding: 40px 32px 36px;
+  position: relative;
+  transition: border-color 0.3s, background 0.3s;
+  cursor: default;
+}
+
+.terapia-card:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: var(--white-faint);
+}
+
+.terapia-card::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 32px;
+  height: 32px;
+  border-top: 2px solid var(--white);
+  border-left: 2px solid var(--white);
+}
+
+.terapia-icon {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  display: block;
+  color: var(--white-dim);
+}
+
+.terapia-card h3 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.terapia-card p {
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--white-dim);
+}
+
+/* ── Contacto ──────────────────────────────────────────────── */
+
+#contacto {
+  border-top: 1px solid var(--accent-line);
+}
+
+.contacto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: start;
+}
+
+.contacto-dato {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 0;
+}
+
+.contacto-dato:first-child { padding-top: 0; }
+
+.contacto-dato__label {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--white-dim);
+}
+
+.contacto-dato__value {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contacto-dato__value:hover { color: var(--white-dim); }
+
+.contacto-dato__value--email {
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+
+.contacto-dato__value--email:hover {
+  color: var(--white-dim);
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 28px;
+  padding: 12px 24px;
+  background: #25d366;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn-whatsapp:hover {
+  background: #1ebe5d;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.btn-whatsapp__icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* ── Agendar cita ──────────────────────────────────────────── */
+
+#agendar-cita {
+  background: var(--navy-dark);
+  border-top: 1px solid var(--accent-line);
+}
+
+/* Appointment form — populated by appointments.js */
+#appointment-form-container {
+  max-width: 560px;
+}
+
+.cita-placeholder {
+  font-size: 0.85rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  color: var(--white-dim);
+}
+
+/* ── Ubicación ─────────────────────────────────────────────── */
+
+#ubicacion {
+  border-top: 1px solid var(--accent-line);
+}
+
+.ubicacion-inner {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: var(--spacing-xl);
+  align-items: start;
+}
+
+/* Mapa iframe */
+.mapa-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  border: 1px solid var(--accent-line);
+  overflow: hidden;
+}
+
+.mapa-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  /* satura/filtra el mapa para integrarlo con la paleta navy */
+  filter: invert(92%) hue-rotate(195deg) saturate(0.85) brightness(0.9);
+}
+
+/* Info lateral */
+.ubicacion-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ubicacion-dato {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ubicacion-dato .dato-label {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--white-dim);
+}
+
+.ubicacion-dato .dato-value {
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--white);
+}
+
+.btn-maps {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 10px 22px;
+  font-family: var(--font-family);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white);
+  text-decoration: none;
+  border: 1px solid var(--accent-line);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.btn-maps:hover {
+  background: var(--white-faint);
+  border-color: rgba(255,255,255,0.6);
+}
+
+@media (max-width: 900px) {
+  .ubicacion-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .mapa-wrapper {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* ── Footer ────────────────────────────────────────────────── */
+
+footer {
+  padding: var(--spacing-md) var(--section-padding-x);
+  border-top: 1px solid var(--accent-line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer p {
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  color: var(--white-dim);
+}
