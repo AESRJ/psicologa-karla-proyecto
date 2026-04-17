@@ -152,7 +152,7 @@ def _build_html(appt) -> str:
         <tr>
           <td style="padding:20px 40px;border-top:1px solid rgba(255,255,255,0.1);">
             <p style="margin:0;font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:1px;">
-              (646) 502 5851 &nbsp;·&nbsp; karlasanchez.j@gmail.com
+              (646) 502 5851 &nbsp;·&nbsp; psc.karlasanchez@gmail.com
             </p>
           </td>
         </tr>
