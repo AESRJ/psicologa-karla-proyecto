@@ -81,6 +81,28 @@ def _day_status(d: date, db: Session) -> DayStatus:
     return DayStatus.limited                  # amarillo — 2 o más citas reservadas
 
 
+# ── Debug endpoint (temporal) ─────────────────────────────────────────────
+
+@router.get("/debug")
+async def debug_db(db: Session = Depends(get_db)):
+    """Muestra el estado real de la BD — solo para diagnóstico."""
+    total = db.query(Appointment).count()
+    sample = db.query(Appointment).order_by(Appointment.id.desc()).limit(10).all()
+    return {
+        "total_appointments": total,
+        "last_10": [
+            {
+                "id":     a.id,
+                "date":   str(a.appointment_date),
+                "time":   str(a.appointment_time),
+                "status": a.status,
+                "name":   a.patient_name,
+            }
+            for a in sample
+        ],
+    }
+
+
 # ── Calendar endpoint ──────────────────────────────────────────────────────
 
 @router.get("/calendar", response_model=dict[str, DayStatus])
