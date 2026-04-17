@@ -2,35 +2,26 @@
 email_service.py
 Envío de correo de confirmación al paciente tras agendar una cita.
 
-Configuración (variables de entorno):
-    SMTP_HOST     — servidor SMTP  (default: smtp.gmail.com)
-    SMTP_PORT     — puerto         (default: 587)
-    SMTP_USER     — correo remitente (ej: karlasanchez.j@gmail.com)
-    SMTP_PASSWORD — contraseña de aplicación de Gmail
-    SMTP_FROM     — nombre visible  (default: "Karla Zermeño — Psicóloga")
+Usa Resend (resend.com) que funciona vía HTTPS — compatible con Railway.
 
-Para activar el envío real establece las variables de entorno y cambia
-ENABLED = True (o exporta SMTP_ENABLED=true).
+Configuración (variables de entorno en Railway):
+    RESEND_API_KEY — clave de API de Resend (re_xxxxxxxxxxxx)
+    SMTP_FROM      — dirección remitente verificada en Resend
+                     (default: onboarding@resend.dev para pruebas)
 """
 
 from __future__ import annotations
 
 import logging
 import os
-import smtplib
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
 
 logger = logging.getLogger(__name__)
 
 # ── Config ─────────────────────────────────────────────────────────────────
 
-ENABLED   = os.getenv("SMTP_ENABLED", "false").lower() == "true"
-SMTP_HOST = os.getenv("SMTP_HOST", "smtp.gmail.com")
-SMTP_PORT = int(os.getenv("SMTP_PORT", "587"))
-SMTP_USER = os.getenv("SMTP_USER", "")
-SMTP_PASS = os.getenv("SMTP_PASSWORD", "")
-SMTP_FROM = os.getenv("SMTP_FROM", "Karla Zermeño — Psicóloga")
+RESEND_API_KEY = os.getenv("RESEND_API_KEY", "")
+FROM_ADDRESS   = os.getenv("SMTP_FROM", "onboarding@resend.dev")
+FROM_NAME      = "Karla Zermeño — Psicóloga"
 
 THERAPY_LABELS = {
     "individual":   "Terapia Individual",
@@ -62,55 +53,46 @@ def _format_time(t) -> str:
 def send_confirmation(appointment) -> None:
     """
     Envía un correo de confirmación al paciente.
-    Si SMTP no está configurado, solo registra el intento en el log.
+    Si RESEND_API_KEY no está configurado, solo registra el intento.
     """
     if not appointment.patient_email:
         return
 
-    subject = "Confirmación de cita — Karla Zermeño Psicóloga"
-    body_html = _build_html(appointment)
-    body_text = _build_text(appointment)
-
-    if not ENABLED or not SMTP_USER:
+    if not RESEND_API_KEY:
         logger.info(
-            "[email] SMTP no configurado — confirmación NO enviada a %s | %s %s %s",
+            "[email] RESEND_API_KEY no configurado — confirmación NO enviada a %s",
             appointment.patient_email,
-            _format_date(appointment.appointment_date),
-            _format_time(appointment.appointment_time),
-            THERAPY_LABELS.get(appointment.therapy_type, appointment.therapy_type),
         )
         return
 
     try:
-        msg = MIMEMultipart("alternative")
-        msg["Subject"] = subject
-        msg["From"]    = f"{SMTP_FROM} <{SMTP_USER}>"
-        msg["To"]      = appointment.patient_email
+        import resend
+        resend.api_key = RESEND_API_KEY
 
-        msg.attach(MIMEText(body_text, "plain", "utf-8"))
-        msg.attach(MIMEText(body_html, "html",  "utf-8"))
-
-        with smtplib.SMTP(SMTP_HOST, SMTP_PORT) as server:
-            server.starttls()
-            server.login(SMTP_USER, SMTP_PASS)
-            server.sendmail(SMTP_USER, appointment.patient_email, msg.as_string())
+        resend.Emails.send({
+            "from":    f"{FROM_NAME} <{FROM_ADDRESS}>",
+            "to":      [appointment.patient_email],
+            "subject": "Confirmación de cita — Karla Zermeño Psicóloga",
+            "html":    _build_html(appointment),
+            "text":    _build_text(appointment),
+        })
 
         logger.info("[email] Confirmación enviada a %s", appointment.patient_email)
 
     except Exception as exc:
-        # No interrumpir el flujo de reserva si el correo falla
         logger.error("[email] Error al enviar confirmación: %s", exc)
 
 
 # ── Templates ──────────────────────────────────────────────────────────────
 
 def _build_text(appt) -> str:
+    label = THERAPY_LABELS.get(appt.therapy_type, appt.therapy_type)
     return (
         f"Hola {appt.patient_name},\n\n"
         f"Tu cita ha sido recibida exitosamente.\n\n"
         f"  Fecha:     {_format_date(appt.appointment_date)}\n"
         f"  Horario:   {_format_time(appt.appointment_time)}\n"
-        f"  Modalidad: {THERAPY_LABELS.get(appt.therapy_type, appt.therapy_type)}\n"
+        f"  Modalidad: {label}\n"
         f"  Total:     ${appt.price:,} MXN\n\n"
         f"Nos pondremos en contacto al {appt.patient_phone} para confirmar.\n\n"
         f"Karla Zermeño — Psicóloga\n"
@@ -159,7 +141,8 @@ def _build_html(appt) -> str:
 
             <p style="margin:0;font-size:13px;font-weight:300;color:rgba(255,255,255,0.65);
                       line-height:1.7;">
-              Nos pondremos en contacto al <strong style="color:#fff;">{appt.patient_phone}</strong>
+              Nos pondremos en contacto al
+              <strong style="color:#fff;">{appt.patient_phone}</strong>
               para confirmar tu cita.
             </p>
           </td>

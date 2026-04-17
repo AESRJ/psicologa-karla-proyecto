@@ -6,3 +6,6 @@ python-multipart>=0.0.9
 
 # PostgreSQL (producción en Railway)
 psycopg2-binary>=2.9.9
+
+# Email (Resend — funciona vía HTTPS, compatible con Railway)
+resend>=2.0.0
