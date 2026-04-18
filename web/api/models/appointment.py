@@ -89,3 +89,18 @@ class AvailableSlot(BaseModel):
 class SlotsResponse(BaseModel):
     date:  date
     slots: list[AvailableSlot]
+
+
+# ── Admin schemas ─────────────────────────────────────────────
+
+class BlockedDayCreate(BaseModel):
+    date:   date
+    reason: Optional[str] = Field(None, max_length=200)
+
+
+class BlockedDayOut(BaseModel):
+    id:     int
+    date:   date
+    reason: Optional[str]
+
+    model_config = {"from_attributes": True}

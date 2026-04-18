@@ -15,7 +15,7 @@ from fastapi.staticfiles import StaticFiles
 
 from api.database import Base, engine
 from api.models import db_models  # noqa: F401 — ensures models are registered
-from api.routes import appointments, contact
+from api.routes import admin, appointments, contact
 
 
 @asynccontextmanager
@@ -49,6 +49,7 @@ app.add_middleware(
 # ── Routes ────────────────────────────────────────────────────
 app.include_router(appointments.router, prefix="/api")
 app.include_router(contact.router,      prefix="/api")
+app.include_router(admin.router,        prefix="/api")
 
 # ── Serve static frontend ─────────────────────────────────────
 # El frontend se sirve desde http://localhost:8000/
