@@ -9,3 +9,6 @@ psycopg2-binary>=2.9.9
 
 # Email (Resend — funciona vía HTTPS, compatible con Railway)
 resend>=2.0.0
+
+# Push notifications (FCM)
+firebase-admin>=6.5.0

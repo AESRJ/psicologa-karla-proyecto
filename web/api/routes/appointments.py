@@ -33,6 +33,7 @@ from api.models.appointment import (
 )
 from api.models.db_models import Appointment, BlockedDay
 from api.services.email_service import send_confirmation
+from api.services.push_service import notify_new_appointment
 
 router = APIRouter(prefix="/appointments", tags=["appointments"])
 
@@ -205,8 +206,9 @@ async def create_appointment(
     db.commit()
     db.refresh(record)
 
-    # Enviar correo en segundo plano — no bloquea la respuesta
+    # Enviar correo y push notification en segundo plano
     background.add_task(send_confirmation, record)
+    background.add_task(notify_new_appointment, db, record)
 
     return _to_out(record)
 

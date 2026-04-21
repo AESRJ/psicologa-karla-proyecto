@@ -50,6 +50,18 @@ class Appointment(Base):
         )
 
 
+class DeviceToken(Base):
+    """FCM tokens de dispositivos registrados para push notifications."""
+    __tablename__ = "device_tokens"
+
+    id         = Column(Integer, primary_key=True, index=True)
+    token      = Column(String(500), nullable=False, unique=True)
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+    def __repr__(self) -> str:
+        return f"<DeviceToken id={self.id} token={self.token[:20]}...>"
+
+
 class BlockedDay(Base):
     """Días que la psicóloga marca como no disponibles."""
     __tablename__ = "blocked_days"

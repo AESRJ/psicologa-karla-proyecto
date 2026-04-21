@@ -16,7 +16,7 @@ Rutas:
 from __future__ import annotations
 
 import os
-from datetime import date
+from datetime import date, datetime
 from typing import Optional
 
 from fastapi import APIRouter, Depends, Header, HTTPException, Query, status
@@ -33,7 +33,7 @@ from api.models.appointment import (
     PRICES,
     AppointmentCreate,
 )
-from api.models.db_models import Appointment, BlockedDay
+from api.models.db_models import Appointment, BlockedDay, DeviceToken
 
 router = APIRouter(prefix="/admin", tags=["admin"])
 
@@ -143,6 +143,25 @@ async def admin_update_status(
     return _to_out(row)
 
 
+# ── Recent appointments (for polling notifications) ───────────────────────
+
+@router.get("/appointments/recent", response_model=list[AppointmentOut])
+async def admin_recent_appointments(
+    since: datetime = Query(...),
+    db:    Session  = Depends(get_db),
+    _:     str      = Depends(_verify_token),
+) -> list[AppointmentOut]:
+    """Citas creadas después de una fecha/hora dada (para notificaciones)."""
+    rows = (
+        db.query(Appointment)
+        .filter(Appointment.created_at > since)
+        .order_by(Appointment.created_at.desc())
+        .limit(50)
+        .all()
+    )
+    return [_to_out(r) for r in rows]
+
+
 # ── Blocked days ───────────────────────────────────────────────────────────
 
 @router.get("/blocked-days", response_model=list[BlockedDayOut])
@@ -190,6 +209,44 @@ async def unblock_day(
         raise HTTPException(status_code=404, detail="Ese día no está bloqueado.")
     db.delete(row)
     db.commit()
+
+
+# ── Device tokens (FCM) ───────────────────────────────────────────────
+
+@router.post("/register-device", status_code=status.HTTP_201_CREATED)
+async def register_device(
+    payload: dict,
+    db:      Session = Depends(get_db),
+    _:       str     = Depends(_verify_token),
+):
+    """Registra un token FCM para recibir push notifications."""
+    token = payload.get("token", "").strip()
+    if not token:
+        raise HTTPException(status_code=400, detail="Token requerido.")
+    existing = db.query(DeviceToken).filter(DeviceToken.token == token).first()
+    if existing:
+        return {"ok": True, "message": "Token ya registrado."}
+    db.add(DeviceToken(token=token))
+    db.commit()
+    return {"ok": True, "message": "Token registrado."}
+
+
+# ── Debug push (temporal) ──────────────────────────────────────────────────
+
+@router.get("/push-status")
+async def push_status(
+    db: Session = Depends(get_db),
+    _:  str     = Depends(_verify_token),
+):
+    """Diagnóstico de notificaciones push."""
+    import os
+    tokens = db.query(DeviceToken).all()
+    has_firebase = bool(os.getenv("FIREBASE_SERVICE_ACCOUNT_JSON", ""))
+    return {
+        "firebase_configured": has_firebase,
+        "registered_devices": len(tokens),
+        "tokens": [t.token[:20] + "..." for t in tokens],
+    }
 
 
 # ── Helper ─────────────────────────────────────────────────────────────────
