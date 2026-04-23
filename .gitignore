@@ -43,3 +43,23 @@ Desktop.ini
 
 # ── Railway / deploy ──────────────────────────────────────────
 .railway/
+
+# ── Archivos temporales / no necesarios ──────────────────────
+screenshots/
+*.apk
+*.zip
+*.png
+!web/assets/img/*.png
+Psicologa Karla/
+BRIEF-REDES-SOCIALES.md
+CONTEXTO.md
+PALETA-COLORES.md
+Mejora.md
+Karla Zermeño - Rediseño.html
+Pagina Karla.zip
+psic-karlasanchez-firebase-adminsdk-fbsvc-*.json
+google-services.json
+node_modules/
+
+# ── Claude ────────────────────────────────────────────────────
+.claude/

@@ -1,19 +1,78 @@
 /* ================================================================
-   RESPONSIVE — breakpoints
+   RESPONSIVE — mobile-first, suave y fluido
    ================================================================ */
+
+/* ── Tablet (≤ 900px) ─────────────────────────────────────────── */
 
 @media (max-width: 900px) {
   header {
     padding: 0 24px;
   }
 
+  .nav-toggle {
+    display: flex;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    height: 100dvh;
+    background: rgba(27, 48, 72, 0.95);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    flex-direction: column;
+    padding: 100px 28px 32px;
+    gap: 2px;
+    transition: right 0.35s ease;
+    z-index: 100;
+  }
+
+  nav.nav--open {
+    right: 0;
+  }
+
   nav a {
-    padding: var(--spacing-xs) 12px;
-    letter-spacing: 0.1em;
+    padding: 16px 16px;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    border-radius: var(--radius-sm);
   }
 
   section {
-    padding: 72px 6%;
+    padding: 64px 7%;
+  }
+
+  /* Hero */
+  #hero {
+    min-height: auto;
+    padding-top: 80px;
+    padding-bottom: 64px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    max-width: 100%;
+  }
+
+  /* Trust strip */
+  #trust-strip {
+    flex-wrap: wrap;
+    gap: 16px 32px;
+    padding: 40px 7% 44px;
+    justify-content: center;
+  }
+
+  /* Grids adapt */
+  .problemas-title { font-size: 1.7rem; }
+
+  .problemas-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .quien-soy-inner {
@@ -22,35 +81,245 @@
 
   .quien-soy-image {
     order: -1;
-    max-width: 320px;
+    max-width: 300px;
   }
 
   .terapias-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .terapias-footer {
     grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .pasos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonios-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resena-form-inner {
+    padding: 28px 24px;
   }
 
   .contacto-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 32px;
+  }
+
+  .ubicacion-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .mapa-wrapper {
+    aspect-ratio: 4 / 3;
+  }
+
+  /* Agendar trust */
+  .agendar-trust-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Nav CTA in mobile menu */
+  .nav-cta {
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  /* Blog */
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .blog-card {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+  }
+
+  .blog-card-img {
+    aspect-ratio: 1;
+    height: 100%;
+  }
+
+  .blog-card-body {
+    padding: 24px;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  footer {
+    padding: var(--spacing-lg) 7% var(--spacing-md);
   }
 }
 
+/* ── Phone (≤ 600px) ──────────────────────────────────────────── */
+
 @media (max-width: 600px) {
+  :root {
+    --section-padding-x: 6%;
+  }
+
+  header {
+    padding: 0 20px;
+  }
+
   .header-brand .brand-name {
-    font-size: 0.75rem;
-  }
-
-  nav {
-    gap: 2px;
-  }
-
-  nav a {
-    padding: var(--spacing-xs) var(--spacing-xs);
-    font-size: 0.62rem;
-    letter-spacing: 0.08em;
+    font-size: 0.78rem;
   }
 
   .section-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    margin-bottom: 36px;
+  }
+
+  section {
+    padding: 56px 6%;
+  }
+
+  /* Hero */
+  #hero {
+    padding-top: 64px;
+    padding-bottom: 48px;
+  }
+
+  .hero-title {
+    font-size: 1.7rem;
+    line-height: 1.25;
+  }
+
+  .hero-subtitle {
+    font-size: 0.88rem;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 16px 24px;
+  }
+
+  /* Trust strip vertical */
+  #trust-strip {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 36px 6% 40px;
+  }
+
+  .problemas-title { font-size: 1.4rem; }
+
+  /* Problem cards single */
+  .problemas-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .problema-card {
+    padding: 30px 24px;
+  }
+
+  /* Steps single */
+  .pasos-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .paso {
+    padding: 28px 20px 24px;
+  }
+
+  /* Testimonials */
+  .testimonio-card {
+    padding: 28px 24px 22px;
+  }
+
+  .resena-identity {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* CTA final */
+  .cta-final-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .cta-final-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* FAQ */
+  .faq-list {
+    padding: 8px 20px;
+  }
+
+  .faq-item summary {
+    font-size: 0.84rem;
+    padding: 18px 0;
+  }
+
+  /* Contacto */
+  .contacto-info,
+  .contacto-cta-card {
+    padding: 28px 24px;
+  }
+
+  /* Floating buttons */
+  .floating-buttons {
+    bottom: 20px;
+    right: 20px;
+    gap: 10px;
+  }
+
+  .float-btn {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* Terapia cards */
+  .terapias-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .terapia-card {
+    padding: 28px 24px 24px;
+  }
+
+  .terapias-footer {
+    grid-template-columns: 1fr;
+  }
+
+  /* Blog stacked on phone */
+  .blog-card {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-card-img {
+    aspect-ratio: 16 / 9;
+  }
+
+  /* Quote */
+  .main-quote p {
+    font-size: 1rem;
+  }
+
+  /* Credentials */
+  .about-credentials {
+    justify-content: center;
   }
 }

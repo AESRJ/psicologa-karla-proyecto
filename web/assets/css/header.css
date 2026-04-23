@@ -13,8 +13,15 @@ header {
   justify-content: space-between;
   padding: 0 var(--spacing-lg);
   height: var(--header-height);
-  background: var(--navy-dark);
-  border-bottom: 1px solid var(--accent-line);
+  background: rgba(27, 48, 72, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(240,237,232,0.1);
+  transition: background 0.4s;
+}
+
+header.header-scrolled {
+  background: rgba(27,48,72,0.97);
 }
 
 /* Brand ──────────────────────────────────────────────────────── */
@@ -25,49 +32,38 @@ header {
   line-height: 1.15;
 }
 
-.header-brand::before {
-  content: '';
-  display: block;
-  width: 28px;
-  height: 2px;
-  background: var(--white);
-  margin-bottom: 6px;
-}
-
 .header-brand .brand-name {
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   color: var(--white);
 }
 
 .header-brand .brand-title {
-  font-size: 0.65rem;
+  font-size: 0.66rem;
   font-weight: 300;
-  letter-spacing: 0.35em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--white-dim);
+  color: var(--sky);
 }
 
 /* Navigation ─────────────────────────────────────────────────── */
 
 nav {
   display: flex;
-  gap: 6px;
+  gap: 4px;
 }
 
 nav a {
   display: inline-block;
-  padding: var(--spacing-xs) 20px;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  padding: var(--spacing-xs) 18px;
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
   color: var(--white-dim);
   text-decoration: none;
-  border-radius: 2px;
-  transition: color 0.2s, background 0.2s;
+  border-radius: var(--radius-sm);
+  transition: color 0.3s, background 0.3s;
 }
 
 nav a:hover {

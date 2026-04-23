@@ -3,19 +3,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Karla Ivett Sánchez Zermeño — Psicóloga</title>
+  <title>Psicóloga en Ensenada | Karla Zermeño — Terapia Profesional</title>
+  <meta name="description" content="Psicóloga profesional en Ensenada especializada en ansiedad, depresión, autoestima y terapia de pareja. Atención presencial y en línea. Agenda tu cita hoy." />
+  <link rel="canonical" href="https://psic-karlazermeno.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Psicóloga en Ensenada | Karla Zermeño" />
+  <meta property="og:description" content="Acompañamiento psicológico profesional para ansiedad, depresión, autoestima y terapia de pareja. Agenda tu cita." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://psic-karlazermeno.com/" />
+  <meta property="og:locale" content="es_MX" />
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Psicóloga Karla Zermeño",
+    "description": "Psicóloga profesional en Ensenada especializada en ansiedad, depresión, autoestima y terapia de pareja.",
+    "url": "https://psic-karlazermeno.com",
+    "telephone": "+526465025851",
+    "email": "psc.karlasanchez@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Blvd. Zertuche 101",
+      "addressLocality": "Ensenada",
+      "addressRegion": "Baja California",
+      "postalCode": "22785",
+      "addressCountry": "MX"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 31.8667,
+      "longitude": -116.5964
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "16:00", "closes": "21:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "09:00", "closes": "21:00" }
+    ],
+    "priceRange": "$600-$1000 MXN",
+    "image": "https://psic-karlazermeno.com/assets/img/karla-foto.jpg",
+    "founder": {
+      "@type": "Person",
+      "name": "Karla Ivett Sánchez Zermeño",
+      "jobTitle": "Psicóloga"
+    }
+  }
+  </script>
 
   <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Styles — loaded in dependency order -->
+  <!-- Styles -->
   <link rel="stylesheet" href="assets/css/variables.css" />
   <link rel="stylesheet" href="assets/css/base.css" />
   <link rel="stylesheet" href="assets/css/header.css" />
-  <link rel="stylesheet" href="assets/css/gallery.css" />
   <link rel="stylesheet" href="assets/css/sections.css" />
   <link rel="stylesheet" href="assets/css/appointments.css?v=2" />
   <link rel="stylesheet" href="assets/css/scroll-reveal.css" />
+  <link rel="stylesheet" href="assets/css/new-sections.css" />
   <link rel="stylesheet" href="assets/css/responsive.css" />
 </head>
 <body>
@@ -23,62 +71,73 @@
   <!-- ═══════════════════════════════════════════════════════ HEADER -->
   <header>
     <div class="header-brand">
-      <span class="brand-name">Karla Ivett Sánchez Zermeño</span>
+      <span class="brand-name">Karla Zermeño</span>
       <span class="brand-title">Psicóloga</span>
     </div>
-    <nav>
-      <a href="#quien-soy">Quién soy</a>
+    <nav id="main-nav">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#terapias">Servicios</a>
       <a href="#contacto">Contacto</a>
-      <a href="#agendar-cita">Agendar cita</a>
-      <a href="#ubicacion">Ubicación</a>
+      <a href="blog.html">Blog</a>
+      <a href="agendar.html" class="nav-cta">Agendar cita</a>
     </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
   </header>
 
   <main>
 
-    <!-- ═══════════════════════════════════════════════════ GALERÍA -->
-    <section id="gallery" aria-label="Galería de imágenes">
-
-      <div class="slide active">
-        <!-- <img src="assets/img/galeria-1.jpg" alt="Consultorio" /> -->
-        <div class="slide-placeholder"><span>Imagen 1</span></div>
+    <!-- ═══════════════════════════════════════════════════ HERO -->
+    <section id="hero">
+      <div class="hero-glow"></div>
+      <div class="hero-content">
+        <div class="trust-badge reveal"><div class="trust-badge-dot"></div>Psicóloga certificada · Ensenada, B.C.</div>
+        <h1 class="hero-title reveal" data-delay="1">Tu bienestar emocional<br>comienza aquí</h1>
+        <p class="hero-subtitle reveal" data-delay="2">
+          Acompañamiento profesional para ansiedad, depresión, autoestima
+          y bienestar emocional. Atención presencial y en línea con total confidencialidad.
+        </p>
+        <div class="hero-ctas reveal" data-delay="3">
+          <a href="agendar.html" class="btn-secondary">Agendar en línea</a>
+        </div>
       </div>
-
-      <div class="slide">
-        <!-- <img src="assets/img/galeria-2.jpg" alt="Terapia" /> -->
-        <div class="slide-placeholder"><span>Imagen 2</span></div>
-      </div>
-
-      <div class="slide">
-        <!-- <img src="assets/img/galeria-3.jpg" alt="Consultorio" /> -->
-        <div class="slide-placeholder"><span>Imagen 3</span></div>
-      </div>
-
-      <div class="slide">
-        <!-- <img src="assets/img/galeria-4.jpg" alt="Sesión" /> -->
-        <div class="slide-placeholder"><span>Imagen 4</span></div>
-      </div>
-
-      <div class="gallery-overlay">
-        <p>Psicología · Bienestar · Crecimiento personal</p>
-      </div>
-
-      <div class="gallery-dots" id="gallery-dots">
-        <div class="dot active" data-index="0"></div>
-        <div class="dot" data-index="1"></div>
-        <div class="dot" data-index="2"></div>
-        <div class="dot" data-index="3"></div>
-      </div>
-
     </section>
 
-    <!-- ═══════════════════════════════════════════════ QUIÉN SOY -->
-    <section id="quien-soy">
+    <!-- wave: hero → trust strip (navy to sand) -->
+    <div class="wave-sep">
+      <svg viewBox="0 0 1440 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C200,90 400,10 600,55 C800,100 1000,15 1200,50 C1320,70 1400,35 1440,40 L1440,110 L0,110 Z" fill="#e8dfd7" opacity="0.5"/>
+        <path d="M0,65 C180,20 380,95 580,60 C780,25 980,85 1200,55 C1340,35 1400,70 1440,65 L1440,110 L0,110 Z" fill="#f3ece6"/>
+      </svg>
+    </div>
+
+    <!-- ═══════════════════════════════════════ TRUST BADGES -->
+    <section id="trust-strip">
+      <div class="trust-item reveal">
+        <svg class="trust-icon" width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6.25" stroke="#b2d5f1" stroke-width="1.5"/><path d="M4.5 7l1.8 1.8 3-3.6" stroke="#b2d5f1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="trust-text">Confidencialidad garantizada</span>
+      </div>
+      <div class="trust-item reveal" data-delay="1">
+        <svg class="trust-icon" width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6.25" stroke="#b2d5f1" stroke-width="1.5"/><path d="M4.5 7l1.8 1.8 3-3.6" stroke="#b2d5f1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="trust-text">Profesional certificada</span>
+      </div>
+      <div class="trust-item reveal" data-delay="2">
+        <svg class="trust-icon" width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6.25" stroke="#b2d5f1" stroke-width="1.5"/><path d="M4.5 7l1.8 1.8 3-3.6" stroke="#b2d5f1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="trust-text">Atención personalizada</span>
+      </div>
+      <div class="trust-item reveal" data-delay="3">
+        <svg class="trust-icon" width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6.25" stroke="#b2d5f1" stroke-width="1.5"/><path d="M4.5 7l1.8 1.8 3-3.6" stroke="#b2d5f1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="trust-text">Presencial y en línea</span>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ SOBRE MÍ -->
+    <section id="sobre-mi">
       <p class="section-label reveal">Mi historia</p>
       <h2 class="section-title reveal" data-delay="1">Conóceme</h2>
 
       <div class="quien-soy-inner">
-
         <div class="quien-soy-text reveal" data-delay="2">
           <p>
             Soy Karla Ivett Sánchez Zermeño, psicóloga comprometida con el bienestar emocional
@@ -95,269 +154,515 @@
             explorar tus emociones, sanar heridas del pasado y construir las herramientas
             que necesitas para vivir mejor.
           </p>
+          <blockquote class="about-quote">
+            &ldquo;Cada proceso terapéutico es único. Mi compromiso es acompañarte con empatía, calidez y profesionalismo.&rdquo;
+          </blockquote>
+          <div class="about-credentials">
+            <span class="credential-badge">Psicóloga Certificada</span>
+            <span class="credential-badge">Atención Presencial y en Línea</span>
+          </div>
         </div>
 
         <div class="quien-soy-image reveal reveal--right" data-delay="3">
           <div class="img-frame">
-            <!-- <img src="assets/img/karla-foto.jpg" alt="Karla Ivett Sánchez Zermeño" /> -->
+            <!-- <img src="assets/img/karla-foto.jpg" alt="Karla Ivett Sánchez Zermeño — Psicóloga en Ensenada" /> -->
             <div class="img-placeholder"><span>Foto</span></div>
           </div>
         </div>
-
       </div>
     </section>
+
+    <!-- wave: sobre mí → problemas (sand to navy) -->
+    <div class="wave-sep">
+      <svg viewBox="0 0 1440 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,70 C240,20 480,100 720,55 C960,10 1200,80 1440,45 L1440,110 L0,110 Z" fill="#244766" opacity="0.6"/>
+        <path d="M0,85 C200,40 440,110 680,70 C920,30 1160,90 1440,60 L1440,110 L0,110 Z" fill="#1f3550"/>
+      </svg>
+    </div>
+
+    <!-- ═══════════════════════════════════ ESPECIALIDADES -->
+    <section id="problemas">
+      <div class="problemas-header reveal">
+        <p class="section-label">Especialidades</p>
+        <h2 class="problemas-title">Recupera tu bienestar emocional</h2>
+        <p class="problemas-subtitle">Atención psicológica profesional enfocada en ayudarte a sanar, crecer y sentirte mejor.</p>
+      </div>
+
+      <div class="problemas-grid">
+        <div class="problema-card reveal" data-delay="1">
+          <div class="problema-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M8 12s1.5 2 4 2 4-2 4-2"/><circle cx="9" cy="9" r="0.5" fill="currentColor"/><circle cx="15" cy="9" r="0.5" fill="currentColor"/></svg>
+          </div>
+          <h3>Ansiedad</h3>
+          <p>Aprende a controlar pensamientos intensos, recuperar la calma y dormir mejor.</p>
+        </div>
+        <div class="problema-card reveal" data-delay="2">
+          <div class="problema-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M8 8l4-5 4 5"/><circle cx="12" cy="16" r="4"/></svg>
+          </div>
+          <h3>Depresión</h3>
+          <p>Recupera energía, motivación y claridad emocional paso a paso.</p>
+        </div>
+        <div class="problema-card reveal" data-delay="3">
+          <div class="problema-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </div>
+          <h3>Estrés</h3>
+          <p>Desarrolla estrategias reales para reducir la carga mental y vivir con más equilibrio.</p>
+        </div>
+        <div class="problema-card reveal" data-delay="1">
+          <div class="problema-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3>Autoestima</h3>
+          <p>Reconecta con tu valor, aprende a quererte y construye una relación sana contigo.</p>
+        </div>
+        <div class="problema-card reveal" data-delay="2">
+          <div class="problema-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Pareja</h3>
+          <p>Reconstruyan comunicación, confianza y conexión emocional juntos.</p>
+        </div>
+        <div class="problema-card problema-card--urgente reveal" data-delay="3">
+          <div class="problema-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h3>Crisis emocional</h3>
+          <p>Apoyo inmediato y profesional para recuperar tu estabilidad cuando más lo necesitas.</p>
+          <span class="problema-badge">Atención prioritaria</span>
+        </div>
+      </div>
+
+      <div class="problemas-cta reveal" data-delay="2">
+        <p class="problemas-cta-text">¿No sabes por dónde empezar?</p>
+        <a href="agendar.html" class="btn-cta-primary">Agenda una valoración inicial</a>
+        <p class="problemas-cta-humanize">No tienes que pasar por esto solo/a. Estoy aquí para ayudarte.</p>
+      </div>
+    </section>
+
+    <!-- wave: problemas → terapias (navy to sand) -->
+    <div class="wave-sep">
+      <svg viewBox="0 0 1440 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,45 C220,95 420,15 620,60 C820,105 1020,20 1220,55 C1340,75 1410,40 1440,45 L1440,110 L0,110 Z" fill="#e8dfd7" opacity="0.5"/>
+        <path d="M0,70 C200,25 400,100 600,65 C800,30 1000,90 1220,60 C1360,40 1420,75 1440,70 L1440,110 L0,110 Z" fill="#f3ece6"/>
+      </svg>
+    </div>
 
     <!-- ═══════════════════════════════════════════════ TERAPIAS -->
     <section id="terapias">
-      <p class="section-label reveal">Modalidades</p>
-      <h2 class="section-title reveal" data-delay="1">Terapias</h2>
+      <div class="terapias-header reveal">
+        <p class="section-label">Atención profesional</p>
+        <h2 class="section-title">Comienza tu proceso terapéutico</h2>
+        <p class="terapias-subtitle">Sesiones personalizadas, presenciales u online, con total confidencialidad.</p>
+      </div>
 
       <div class="terapias-grid">
-
-        <div class="terapia-card reveal" data-delay="1">
-          <span class="terapia-icon">&#9679;</span>
+        <!-- ★ POPULAR — Terapia Individual -->
+        <div class="terapia-card terapia-card--destacada reveal" data-delay="1">
+          <span class="terapia-badge">Más solicitada</span>
+          <div class="terapia-card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
           <h3>Terapia Individual</h3>
-          <p>
-            Un espacio personal y confidencial para explorar tus emociones, pensamientos
-            y conductas. Trabajamos juntos en tu bienestar emocional, autoconocimiento
-            y el desarrollo de herramientas para afrontar los desafíos de la vida cotidiana.
-          </p>
+          <ul class="terapia-beneficios">
+            <li>Ansiedad y estrés</li>
+            <li>Autoestima</li>
+            <li>Desarrollo personal</li>
+            <li>Manejo emocional</li>
+          </ul>
+          <div class="terapia-precio-block">
+            <span class="terapia-precio-desde">Desde</span>
+            <span class="terapia-precio-monto">$600 <small>MXN</small></span>
+            <span class="terapia-precio-duracion">50 min por sesión</span>
+          </div>
+          <a href="agendar.html" class="terapia-btn">Quiero comenzar</a>
         </div>
 
+        <!-- Terapia en Línea -->
         <div class="terapia-card reveal" data-delay="2">
-          <span class="terapia-icon">&#9679;</span>
-          <h3>Terapia en Pareja</h3>
-          <p>
-            Acompañamos a las parejas en la mejora de su comunicación, resolución de
-            conflictos y fortalecimiento del vínculo. El objetivo es construir una
-            relación más sana, consciente y satisfactoria para ambos.
-          </p>
-        </div>
-
-        <div class="terapia-card reveal" data-delay="3">
-          <span class="terapia-icon">&#9679;</span>
-          <h3>Terapia en Familia</h3>
-          <p>
-            Trabajamos con la familia como sistema, identificando patrones de relación
-            y fomentando dinámicas más saludables. Juntos construimos un ambiente de
-            mayor comprensión, respeto y bienestar para todos sus integrantes.
-          </p>
-        </div>
-
-        <div class="terapia-card reveal" data-delay="1">
-          <span class="terapia-icon">&#9679;</span>
-          <h3>Terapia para Adolescentes</h3>
-          <p>
-            Un espacio de escucha y acompañamiento especializado para jóvenes en etapa
-            de desarrollo. Abordamos identidad, emociones, vínculos y los retos propios
-            de la adolescencia con un enfoque cercano y libre de juicios.
-          </p>
-        </div>
-
-        <div class="terapia-card reveal" data-delay="2">
-          <span class="terapia-icon">&#9679;</span>
+          <span class="terapia-badge terapia-badge--online">Disponible hoy</span>
+          <div class="terapia-card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
           <h3>Terapia en Línea</h3>
-          <p>
-            Accede al proceso terapéutico desde la comodidad de tu hogar. Las sesiones
-            en línea ofrecen la misma calidad y confidencialidad que la consulta
-            presencial, adaptadas a tu ritmo y disponibilidad.
-          </p>
+          <ul class="terapia-beneficios">
+            <li>Desde cualquier lugar</li>
+            <li>Misma calidad y confidencialidad</li>
+            <li>Horarios flexibles</li>
+            <li>Plataforma segura</li>
+          </ul>
+          <div class="terapia-precio-block">
+            <span class="terapia-precio-desde">Desde</span>
+            <span class="terapia-precio-monto">$600 <small>MXN</small></span>
+            <span class="terapia-precio-duracion">50 min por sesión</span>
+          </div>
+          <a href="agendar.html" class="terapia-btn">Agendar sesión</a>
         </div>
 
+        <!-- Terapia en Pareja -->
+        <div class="terapia-card reveal" data-delay="3">
+          <div class="terapia-card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Terapia en Pareja</h3>
+          <ul class="terapia-beneficios">
+            <li>Comunicación efectiva</li>
+            <li>Resolución de conflictos</li>
+            <li>Fortalecimiento del vínculo</li>
+            <li>Reconexión emocional</li>
+          </ul>
+          <div class="terapia-precio-block">
+            <span class="terapia-precio-desde">Desde</span>
+            <span class="terapia-precio-monto">$800 <small>MXN</small></span>
+            <span class="terapia-precio-duracion">60 min por sesión</span>
+          </div>
+          <a href="agendar.html" class="terapia-btn">Reservar cita</a>
+        </div>
+
+        <!-- Terapia Familiar -->
+        <div class="terapia-card reveal" data-delay="1">
+          <div class="terapia-card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>Terapia Familiar</h3>
+          <ul class="terapia-beneficios">
+            <li>Dinámicas familiares</li>
+            <li>Límites saludables</li>
+            <li>Comunicación y respeto</li>
+            <li>Resolución de crisis</li>
+          </ul>
+          <div class="terapia-precio-block">
+            <span class="terapia-precio-desde">Desde</span>
+            <span class="terapia-precio-monto">$1,000 <small>MXN</small></span>
+            <span class="terapia-precio-duracion">60 min por sesión</span>
+          </div>
+          <a href="agendar.html" class="terapia-btn">Reservar cita</a>
+        </div>
+
+        <!-- Terapia para Adolescentes -->
+        <div class="terapia-card reveal" data-delay="2">
+          <div class="terapia-card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 1 5 5v3a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"/><path d="M8.5 16.5a6 6 0 0 0 7 0"/><path d="M12 22v-2"/></svg>
+          </div>
+          <h3>Terapia para Adolescentes</h3>
+          <ul class="terapia-beneficios">
+            <li>Identidad y autoestima</li>
+            <li>Manejo de emociones</li>
+            <li>Relaciones sociales</li>
+            <li>Espacio libre de juicios</li>
+          </ul>
+          <div class="terapia-precio-block">
+            <span class="terapia-precio-desde">Desde</span>
+            <span class="terapia-precio-monto">$600 <small>MXN</small></span>
+            <span class="terapia-precio-duracion">50 min por sesión</span>
+          </div>
+          <a href="agendar.html" class="terapia-btn">Reservar cita</a>
+        </div>
+      </div>
+
+      <!-- CTA final + orientación -->
+      <div class="terapias-footer reveal" data-delay="3">
+        <div class="terapias-cta-final">
+          <p class="terapias-cta-text">No tienes que hacerlo solo/a.</p>
+          <a href="agendar.html" class="btn-cta-primary">Agenda hoy tu primera sesión</a>
+        </div>
+        <div class="terapias-orientacion">
+          <p class="terapias-orientacion-text">¿No sabes qué modalidad necesitas?</p>
+          <p class="terapias-orientacion-sub">Te orientamos sin compromiso.</p>
+          <a href="https://wa.me/526461234567?text=Hola%2C%20me%20gustaría%20orientación%20sobre%20qué%20tipo%20de%20terapia%20necesito" class="terapia-btn-orientacion" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 0 0 .612.616l4.584-1.453A11.949 11.949 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.24 0-4.326-.722-6.016-1.948l-.42-.312-2.72.863.901-2.643-.343-.447A9.958 9.958 0 0 1 2 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+            Quiero orientación
+          </a>
+        </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════ AGENDAR CITA -->
-    <section id="agendar-cita">
-      <p class="section-label reveal">Reserva tu espacio</p>
-      <h2 class="section-title reveal" data-delay="1">Agendar Cita</h2>
+    <!-- wave: terapias → como funciona (sand to navy) -->
+    <div class="wave-sep">
+      <svg viewBox="0 0 1440 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,75 C260,25 500,105 740,60 C980,15 1220,85 1440,50 L1440,110 L0,110 Z" fill="#244766" opacity="0.6"/>
+        <path d="M0,90 C220,45 460,115 700,75 C940,35 1180,95 1440,65 L1440,110 L0,110 Z" fill="#1f3550"/>
+      </svg>
+    </div>
 
-      <div id="booking-widget" class="reveal" data-delay="2">
+    <!-- ═══════════════════════════════════════ CÓMO FUNCIONA -->
+    <section id="como-funciona">
+      <div class="proceso-header reveal">
+        <p class="section-label">Tu camino</p>
+        <h2 class="section-title">Comienza en 4 simples pasos</h2>
+        <p class="proceso-subtitle">Un proceso claro, sin complicaciones. Tú solo da el primer paso.</p>
+      </div>
 
-        <!-- ── Barra de progreso ─────────────────────────── -->
-        <nav class="booking-steps" aria-label="Pasos del agendamiento">
-          <div class="bk-step bk-step--active" data-step="1">
-            <span class="bk-step__num">1</span>
-            <span class="bk-step__label">Fecha</span>
+      <div class="pasos-grid">
+        <div class="paso reveal" data-delay="1">
+          <div class="paso-icon-wrap">
+            <span class="paso-num">01</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           </div>
-          <div class="bk-step__line"></div>
-          <div class="bk-step" data-step="2">
-            <span class="bk-step__num">2</span>
-            <span class="bk-step__label">Horario</span>
-          </div>
-          <div class="bk-step__line"></div>
-          <div class="bk-step" data-step="3">
-            <span class="bk-step__num">3</span>
-            <span class="bk-step__label">Modalidad</span>
-          </div>
-          <div class="bk-step__line"></div>
-          <div class="bk-step" data-step="4">
-            <span class="bk-step__num">4</span>
-            <span class="bk-step__label">Datos</span>
-          </div>
-          <div class="bk-step__line"></div>
-          <div class="bk-step" data-step="5">
-            <span class="bk-step__num">5</span>
-            <span class="bk-step__label">Resumen</span>
-          </div>
-        </nav>
-
-        <!-- ── Paso 1: Calendario ────────────────────────── -->
-        <div class="bk-panel active" data-step="1">
-          <div id="cal-root"></div>
+          <h3>Agenda tu cita</h3>
+          <p>Elige fecha y horario por WhatsApp o directamente en línea. Es rápido y sencillo.</p>
+          <span class="paso-tiempo">2 minutos</span>
         </div>
-
-        <!-- ── Paso 2: Horarios ──────────────────────────── -->
-        <div class="bk-panel" data-step="2">
-          <div id="slots-root"></div>
-        </div>
-
-        <!-- ── Paso 3: Modalidad ─────────────────────────── -->
-        <div class="bk-panel" data-step="3">
-          <button class="bk-back" id="therapy-back">&#8592; Cambiar horario</button>
-          <p class="bk-step-subtitle">Selecciona el tipo de terapia</p>
-
-          <div class="therapy-options">
-
-            <div class="therapy-option" data-therapy="individual" role="button" tabindex="0">
-              <div class="therapy-option__name">Terapia Individual</div>
-              <div class="therapy-option__price">$600</div>
-              <div class="therapy-option__price-unit">MXN por sesión</div>
-            </div>
-
-            <div class="therapy-option" data-therapy="pareja" role="button" tabindex="0">
-              <div class="therapy-option__name">Terapia en Pareja</div>
-              <div class="therapy-option__price">$800</div>
-              <div class="therapy-option__price-unit">MXN por sesión</div>
-            </div>
-
-            <div class="therapy-option" data-therapy="familia" role="button" tabindex="0">
-              <div class="therapy-option__name">Terapia Familiar</div>
-              <div class="therapy-option__price">$1,000</div>
-              <div class="therapy-option__price-unit">MXN por sesión</div>
-            </div>
-
-            <div class="therapy-option" data-therapy="adolescentes" role="button" tabindex="0">
-              <div class="therapy-option__name">Terapia para Adolescentes</div>
-              <div class="therapy-option__price">$600</div>
-              <div class="therapy-option__price-unit">MXN por sesión</div>
-            </div>
-
-            <div class="therapy-option" data-therapy="online" role="button" tabindex="0">
-              <div class="therapy-option__name">Terapia en Línea</div>
-              <div class="therapy-option__price">$600</div>
-              <div class="therapy-option__price-unit">MXN por sesión</div>
-            </div>
-
+        <div class="paso reveal" data-delay="2">
+          <div class="paso-icon-wrap">
+            <span class="paso-num">02</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           </div>
+          <h3>Primera sesión</h3>
+          <p>Nos conocemos, exploramos tu situación y definimos juntos los objetivos del proceso.</p>
+          <span class="paso-tiempo">50 minutos</span>
         </div>
-
-        <!-- ── Paso 4: Datos personales ──────────────────── -->
-        <div class="bk-panel" data-step="4">
-          <button class="bk-back" id="personal-back">&#8592; Cambiar modalidad</button>
-          <p class="bk-step-subtitle">Tus datos de contacto</p>
-
-          <div class="bk-form">
-            <div class="bk-field">
-              <label class="bk-label" for="input-name">Nombre completo</label>
-              <input class="bk-input" id="input-name" type="text"
-                     autocomplete="name" placeholder="Tu nombre" />
-              <span class="field-error"></span>
-            </div>
-            <div class="bk-field">
-              <label class="bk-label" for="input-phone">Número de contacto</label>
-              <input class="bk-input" id="input-phone" type="tel"
-                     autocomplete="tel" placeholder="+52 646 000 0000" />
-              <span class="field-error"></span>
-            </div>
-            <div class="bk-field">
-              <label class="bk-label" for="input-email">Correo electrónico <span style="font-weight:300;letter-spacing:0"></span></label>
-              <input class="bk-input" id="input-email" type="email"
-                     autocomplete="email" placeholder="tucorreo@ejemplo.com" />
-              <span class="field-error"></span>
-            </div>
-            <div class="bk-form-actions">
-              <button class="btn-reserve" id="personal-next">Continuar</button>
-            </div>
+        <div class="paso reveal" data-delay="3">
+          <div class="paso-icon-wrap">
+            <span class="paso-num">03</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
           </div>
+          <h3>Plan personalizado</h3>
+          <p>Diseño un plan terapéutico adaptado a tus necesidades, ritmo y metas personales.</p>
+          <span class="paso-tiempo">A tu medida</span>
         </div>
-
-        <!-- ── Paso 5: Resumen ───────────────────────────── -->
-        <div class="bk-panel" data-step="5">
-          <button class="bk-back" id="summary-back">&#8592; Editar datos</button>
-          <p class="bk-step-subtitle">Confirma los detalles de tu cita</p>
-
-          <div class="summary-box">
-            <div class="summary-row">
-              <span class="summary-row__label">Fecha</span>
-              <span class="summary-row__value" id="sum-date">—</span>
-            </div>
-            <div class="summary-row">
-              <span class="summary-row__label">Horario</span>
-              <span class="summary-row__value" id="sum-time">—</span>
-            </div>
-            <div class="summary-row">
-              <span class="summary-row__label">Modalidad</span>
-              <span class="summary-row__value" id="sum-therapy">—</span>
-            </div>
-            <div class="summary-row">
-              <span class="summary-row__label">Nombre</span>
-              <span class="summary-row__value" id="sum-name">—</span>
-            </div>
-            <div class="summary-row">
-              <span class="summary-row__label">Contacto</span>
-              <span class="summary-row__value" id="sum-phone">—</span>
-            </div>
-            <div class="summary-row">
-              <span class="summary-row__label">Correo</span>
-              <span class="summary-row__value" id="sum-email">—</span>
-            </div>
-            <div class="summary-row summary-row--total">
-              <span class="summary-row__label">Total</span>
-              <span class="summary-row__value" id="sum-price">—</span>
-            </div>
+        <div class="paso reveal" data-delay="4">
+          <div class="paso-icon-wrap">
+            <span class="paso-num">04</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
-
-          <button class="btn-reserve" id="btn-reserve">Reservar Cita</button>
-          <span class="reserve-error" id="reserve-error"></span>
+          <h3>Tu bienestar</h3>
+          <p>Te acompaño en cada etapa hasta que logres el equilibrio emocional que mereces.</p>
+          <span class="paso-tiempo">Seguimiento continuo</span>
         </div>
+      </div>
 
-      </div><!-- #booking-widget -->
+      <div class="proceso-cta reveal" data-delay="3">
+        <a href="agendar.html" class="btn-secondary">Da el primer paso hoy</a>
+      </div>
     </section>
+
+    <!-- wave: como funciona → testimonios (navy to sand) -->
+    <div class="wave-sep">
+      <svg viewBox="0 0 1440 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,35 C180,85 380,5 580,50 C780,95 980,10 1180,45 C1300,65 1380,30 1440,35 L1440,110 L0,110 Z" fill="#e8dfd7" opacity="0.5"/>
+        <path d="M0,60 C160,15 360,90 560,55 C760,20 960,80 1180,50 C1320,30 1380,65 1440,60 L1440,110 L0,110 Z" fill="#f3ece6"/>
+      </svg>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ TESTIMONIOS -->
+    <section id="testimonios">
+      <div class="testimonios-header reveal">
+        <p class="section-label">Experiencias reales</p>
+        <h2 class="section-title">Lo que dicen mis pacientes</h2>
+        <p class="testimonios-subtitle">Historias de personas que decidieron dar el primer paso.</p>
+      </div>
+
+      <div class="testimonios-grid">
+        <div class="testimonio-card reveal" data-delay="1">
+          <div class="testimonio-quote-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" opacity="0.3"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+          </div>
+          <p class="testimonio-text">Desde la primera sesión sentí un espacio seguro para hablar sin miedo a ser juzgada. Me ayudó a entender mi ansiedad y hoy me siento mucho más tranquila.</p>
+          <div class="testimonio-footer">
+            <div class="testimonio-stars">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="testimonio-autor">Paciente anónima</span>
+            <span class="testimonio-tipo">Terapia individual</span>
+          </div>
+        </div>
+
+        <div class="testimonio-card testimonio-card--destacado reveal" data-delay="2">
+          <div class="testimonio-quote-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" opacity="0.3"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+          </div>
+          <p class="testimonio-text">La terapia de pareja con Karla nos cambió la forma de comunicarnos. Aprendimos a escucharnos de verdad y nuestra relación mejoró muchísimo. Estamos más conectados que nunca.</p>
+          <div class="testimonio-footer">
+            <div class="testimonio-stars">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="testimonio-autor">Paciente anónimo</span>
+            <span class="testimonio-tipo">Terapia de pareja</span>
+          </div>
+        </div>
+
+        <div class="testimonio-card reveal" data-delay="3">
+          <div class="testimonio-quote-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" opacity="0.3"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+          </div>
+          <p class="testimonio-text">Excelente profesional. Me ayudó a recuperar mi autoestima en un momento muy difícil. Su calidez y profesionalismo hacen toda la diferencia.</p>
+          <div class="testimonio-footer">
+            <div class="testimonio-stars">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="testimonio-autor">Paciente anónima</span>
+            <span class="testimonio-tipo">Terapia individual</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dejar reseña -->
+      <div class="resena-section reveal" data-delay="2">
+        <button class="resena-toggle" onclick="document.getElementById('resena-form').classList.toggle('resena-form--open')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          ¿Ya te he atendido? Cuéntanos tu experiencia
+        </button>
+
+        <div id="resena-form" class="resena-form">
+          <div class="resena-form-inner">
+            <div class="resena-field">
+              <label class="resena-label">Tu experiencia</label>
+              <textarea class="resena-textarea" placeholder="Comparte cómo fue tu proceso terapéutico..." rows="4"></textarea>
+            </div>
+            <div class="resena-identity">
+              <label class="resena-radio">
+                <input type="radio" name="resena-tipo" value="anonimo" checked>
+                <span class="resena-radio-mark"></span>
+                Publicar como anónimo/a
+              </label>
+              <label class="resena-radio">
+                <input type="radio" name="resena-tipo" value="nombre">
+                <span class="resena-radio-mark"></span>
+                Publicar con mi nombre
+              </label>
+              <input type="text" class="resena-nombre-input" placeholder="Tu nombre (opcional)" disabled>
+            </div>
+            <div class="resena-stars-select">
+              <label class="resena-label">Calificación</label>
+              <div class="resena-star-picker">
+                <button type="button" class="resena-star active" data-value="1">&#9733;</button>
+                <button type="button" class="resena-star active" data-value="2">&#9733;</button>
+                <button type="button" class="resena-star active" data-value="3">&#9733;</button>
+                <button type="button" class="resena-star active" data-value="4">&#9733;</button>
+                <button type="button" class="resena-star active" data-value="5">&#9733;</button>
+              </div>
+            </div>
+            <button class="resena-submit">Enviar reseña</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- wave: testimonios → faq (sand to navy) -->
+    <div class="wave-sep">
+      <svg viewBox="0 0 1440 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,65 C220,15 460,95 700,50 C940,5 1180,75 1440,40 L1440,110 L0,110 Z" fill="#244766" opacity="0.6"/>
+        <path d="M0,80 C180,35 420,105 660,65 C900,25 1140,85 1440,55 L1440,110 L0,110 Z" fill="#1f3550"/>
+      </svg>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════ FAQ -->
+    <section id="faq">
+      <div class="faq-header">
+        <p class="section-label reveal">Dudas comunes</p>
+        <h2 class="section-title reveal" data-delay="1">Preguntas Frecuentes</h2>
+        <p class="faq-subtitle reveal" data-delay="1">Resuelve tus dudas antes de agendar. Si no encuentras tu pregunta, escríbeme con confianza.</p>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item reveal" data-delay="1">
+          <summary>¿La terapia es completamente confidencial?</summary>
+          <p>Sí. Todo lo que compartas en sesión es estrictamente confidencial. La privacidad y el respeto son la base de mi práctica profesional.</p>
+        </details>
+        <details class="faq-item reveal" data-delay="1">
+          <summary>¿Atiendes en línea?</summary>
+          <p>Sí. Ofrezco terapia en línea con la misma calidad que la presencial. Solo necesitas un espacio privado y conexión a internet.</p>
+        </details>
+        <details class="faq-item reveal" data-delay="2">
+          <summary>¿Cuánto dura una sesión?</summary>
+          <p>Cada sesión tiene una duración aproximada de 50 minutos a 1 hora, dependiendo de la modalidad y las necesidades del proceso.</p>
+        </details>
+        <details class="faq-item reveal" data-delay="2">
+          <summary>¿Cómo agendo mi primera cita?</summary>
+          <p>Puedes agendar directamente en esta página usando el calendario, o escribirme por WhatsApp al (646) 502 5851. Yo te confirmo tu cita.</p>
+        </details>
+        <details class="faq-item reveal" data-delay="3">
+          <summary>¿Cómo es la primera sesión?</summary>
+          <p>En la primera sesión nos conocemos, platicamos sobre tu situación y juntos definimos los objetivos del proceso terapéutico. No hay presión, es un espacio seguro.</p>
+        </details>
+        <details class="faq-item reveal" data-delay="3">
+          <summary>¿Atiendes terapia de pareja y familiar?</summary>
+          <p>Sí. Trabajo con parejas y familias para mejorar la comunicación, resolver conflictos y fortalecer los vínculos afectivos.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- wave: faq → contacto (navy to navy, subtle) -->
+    <div class="wave-sep">
+      <svg viewBox="0 0 1440 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,55 C240,90 480,20 720,60 C960,100 1200,30 1440,55 L1440,110 L0,110 Z" fill="#1f3550" opacity="0.5"/>
+        <path d="M0,75 C200,40 440,100 680,65 C920,30 1160,85 1440,70 L1440,110 L0,110 Z" fill="#1b3048"/>
+      </svg>
+    </div>
 
     <!-- ═══════════════════════════════════════════════ CONTACTO -->
     <section id="contacto">
-      <p class="section-label reveal">Escríbeme</p>
-      <h2 class="section-title reveal" data-delay="1">Contacto</h2>
+      <div class="contacto-header">
+        <p class="section-label reveal">Escríbeme</p>
+        <h2 class="section-title reveal" data-delay="1">Contacto</h2>
+        <p class="contacto-subtitle reveal" data-delay="1">Estoy aquí para acompañarte. Elige el medio que te resulte más cómodo.</p>
+      </div>
 
       <div class="contacto-grid">
         <div class="contacto-info reveal" data-delay="2">
-          <div class="contacto-dato">
-            <span class="contacto-dato__label">Teléfono</span>
-            <a class="contacto-dato__value" href="tel:6465025851">(646) 502 5851</a>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.62 10.79A15.05 15.05 0 0 0 13.21 17.38l2.08-2.08a1 1 0 0 1 1.02-.24 11.5 11.5 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.5 11.5 0 0 0 .57 3.6 1 1 0 0 1-.24 1.02z"/></svg>
+            </div>
+            <div>
+              <div class="contacto-dato__label">Teléfono</div>
+              <a class="contacto-dato__value" href="tel:6465025851">(646) 502 5851</a>
+            </div>
           </div>
-          <div class="contacto-dato">
-            <span class="contacto-dato__label">Correo</span>
-            <a class="contacto-dato__value contacto-dato__value--email"
-               href="mailto:karlasanchez.j@gmail.com">karlasanchez.j@gmail.com</a>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+            </div>
+            <div>
+              <div class="contacto-dato__label">Correo</div>
+              <a class="contacto-dato__value contacto-dato__value--email" href="mailto:psc.karlasanchez@gmail.com">psc.karlasanchez@gmail.com</a>
+            </div>
           </div>
-          <div class="contacto-dato">
-            <span class="contacto-dato__label">Instagram</span>
-            <a class="contacto-dato__value" href="https://instagram.com/karlazzermeno"
-               target="_blank" rel="noopener">@karlazzermeno</a>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </div>
+            <div>
+              <div class="contacto-dato__label">Instagram</div>
+              <a class="contacto-dato__value" href="https://www.instagram.com/psic.karlazermeno/" target="_blank" rel="noopener">@psic.karlazermeno</a>
+            </div>
           </div>
-
-          <a href="https://wa.me/526465025851"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="btn-whatsapp">
-            <svg class="btn-whatsapp__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            Escríbenos por WhatsApp
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <div class="contacto-dato__label">Horario</div>
+              <span class="contacto-dato__value">Lun – Vie: 4:00 PM – 9:00 PM<br>Sáb – Dom: 9:00 AM – 9:00 PM</span>
+            </div>
+          </div>
+        </div>
+        <div class="contacto-cta-card reveal" data-delay="3">
+          <div class="contacto-cta-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3 class="contacto-cta-title">¿Lista para dar el primer paso?</h3>
+          <p class="contacto-cta-text">Escríbeme por WhatsApp y agenda tu primera sesión. Sin compromiso, sin presión.</p>
+          <a href="https://wa.me/526465025851?text=Hola%20Psic.%20Karla%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita"
+             target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+            <svg class="btn-whatsapp__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.12 1.52 5.856L0 24l6.336-1.662A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.82c-1.956 0-3.83-.528-5.47-1.528l-.392-.233-3.758.986 1.003-3.665-.256-.407A9.788 9.788 0 0 1 2.18 12c0-5.415 4.405-9.82 9.82-9.82 5.415 0 9.82 4.405 9.82 9.82 0 5.415-4.405 9.82-9.82 9.82z"/></svg>
+            Escribir por WhatsApp
           </a>
         </div>
-        <div></div>
       </div>
     </section>
 
@@ -367,7 +672,6 @@
       <h2 class="section-title reveal" data-delay="1">Ubicación</h2>
 
       <div class="ubicacion-inner">
-
         <div class="mapa-wrapper reveal" data-delay="2">
           <iframe
             src="https://maps.google.com/maps?q=Blvd.+Zertuche+101,+Vista+Hermosa,+22785+Ensenada,+Baja+California,+Mexico&output=embed&z=16"
@@ -379,7 +683,6 @@
         </div>
 
         <div class="ubicacion-info reveal" data-delay="3">
-
           <div class="ubicacion-dato">
             <span class="dato-label">Dirección</span>
             <span class="dato-value">
@@ -388,20 +691,10 @@
               Ensenada, B.C.
             </span>
           </div>
-
           <div class="ubicacion-dato">
             <span class="dato-label">Referencia</span>
             <span class="dato-value">Atrás de Víctor Restaurante</span>
           </div>
-
-          <div class="ubicacion-dato">
-            <span class="dato-label">Horario</span>
-            <span class="dato-value">
-              Lunes – Viernes<br>
-              9:00 – 18:00
-            </span>
-          </div>
-
           <a
             href="https://maps.google.com/maps?q=Blvd.+Zertuche+101,+Vista+Hermosa,+22785+Ensenada,+Baja+California,+Mexico"
             target="_blank"
@@ -410,9 +703,7 @@
           >
             Abrir en Google Maps
           </a>
-
         </div>
-
       </div>
     </section>
 
@@ -420,14 +711,85 @@
 
   <!-- ═══════════════════════════════════════════════════════ FOOTER -->
   <footer>
-    <p>&copy; 2025 Karla Ivett Sánchez Zermeño &mdash; Psicóloga</p>
-    <p>Todos los derechos reservados</p>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-name">Karla Zermeño</span>
+        <span class="footer-title">Psicóloga</span>
+        <p class="footer-tagline">Acompañamiento profesional para tu bienestar emocional.</p>
+      </div>
+      <div class="footer-links">
+        <span class="footer-heading">Navegación</span>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#terapias">Servicios</a>
+        <a href="agendar.html">Agendar cita</a>
+        <a href="blog.html">Blog</a>
+        <a href="#faq">Preguntas frecuentes</a>
+      </div>
+      <div class="footer-contact">
+        <span class="footer-heading">Contacto</span>
+        <a href="tel:6465025851">(646) 502 5851</a>
+        <a href="mailto:psc.karlasanchez@gmail.com">psc.karlasanchez@gmail.com</a>
+        <a href="https://instagram.com/karlazzermeno" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://wa.me/526465025851" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Karla Ivett Sánchez Zermeño &mdash; Psicóloga. Todos los derechos reservados.</p>
+    </div>
   </footer>
 
+  <!-- ═══════════════════════════════ FLOATING BUTTONS -->
+  <div class="floating-buttons">
+    <a href="tel:6465025851" class="float-btn float-btn--phone" aria-label="Llamar">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    </a>
+    <a href="https://wa.me/526465025851" target="_blank" rel="noopener noreferrer" class="float-btn float-btn--whatsapp" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+  </div>
+
   <!-- Scripts -->
-  <script src="assets/js/gallery.js?v=2"></script>
-  <script src="assets/js/appointments.js?v=4"></script>
   <script src="assets/js/scroll-reveal.js?v=2"></script>
+  <script>
+    // Mobile nav toggle
+    document.getElementById('nav-toggle').addEventListener('click', function() {
+      document.getElementById('main-nav').classList.toggle('nav--open');
+      this.classList.toggle('nav-toggle--active');
+    });
+    // Close nav on link click
+    document.querySelectorAll('#main-nav a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        document.getElementById('main-nav').classList.remove('nav--open');
+        document.getElementById('nav-toggle').classList.remove('nav-toggle--active');
+      });
+    });
+
+    // Reseña: toggle name input
+    document.querySelectorAll('input[name="resena-tipo"]').forEach(function(radio) {
+      radio.addEventListener('change', function() {
+        var nameInput = document.querySelector('.resena-nombre-input');
+        nameInput.disabled = this.value === 'anonimo';
+        if (this.value === 'nombre') nameInput.focus();
+      });
+    });
+
+    // Reseña: star picker
+    document.querySelectorAll('.resena-star').forEach(function(star) {
+      star.addEventListener('click', function() {
+        var val = parseInt(this.dataset.value);
+        document.querySelectorAll('.resena-star').forEach(function(s) {
+          s.classList.toggle('active', parseInt(s.dataset.value) <= val);
+        });
+      });
+    });
+  </script>
+  <script>
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      document.querySelector('header').style.background =
+        window.scrollY > 40 ? 'rgba(27,48,72,0.97)' : 'rgba(27,48,72,0.82)';
+    });
+  </script>
 
 </body>
 </html>

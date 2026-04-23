@@ -17,6 +17,7 @@ body {
   background-color: var(--navy);
   color: var(--white);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 main {
@@ -27,32 +28,40 @@ main {
 
 section {
   padding: var(--spacing-2xl) var(--section-padding-x);
+  position: relative;
 }
 
 .section-label {
-  font-size: 0.65rem;
-  font-weight: 300;
-  letter-spacing: 0.5em;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
   color: var(--white-dim);
   margin-bottom: 14px;
 }
 
 .section-title {
-  font-size: 2.4rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   color: var(--white);
-  margin-bottom: 40px;
+  margin-bottom: 48px;
   position: relative;
 }
 
 .section-title::after {
   content: '';
   display: block;
-  width: 48px;
+  width: 40px;
   height: 2px;
-  background: var(--white);
-  margin-top: 14px;
+  background: var(--cream);
+  opacity: 0.5;
+  margin-top: 16px;
+  border-radius: 1px;
 }
+
+/* ── Fluid typography defaults ────────────────────────────── */
+
+h1, .hero-title { font-size: clamp(2rem, 4vw, 3.2rem); }
+h2, .section-title { font-size: clamp(1.5rem, 3vw, 2.2rem); }
+h3 { font-size: clamp(1rem, 1.4vw, 1.1rem); }

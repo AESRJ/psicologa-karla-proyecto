@@ -1,17 +1,28 @@
 /* ================================================================
    DESIGN TOKENS
-   Paleta extraída del branding de Karla Zermeño — Psicóloga
+   Paleta suave y cálida — Karla Zermeño, Psicóloga
    ================================================================ */
 
 :root {
-  /* Colour palette */
-  --navy:        #0D2461;
-  --navy-light:  #14306e;
-  --navy-dark:   #091a47;
-  --white:       #ffffff;
-  --white-dim:   rgba(255, 255, 255, 0.75);
-  --white-faint: rgba(255, 255, 255, 0.12);
-  --accent-line: rgba(255, 255, 255, 0.35);
+  /* Colour palette — azul cálido híbrido */
+  --navy:        #243d5c;
+  --navy-light:  #2e4d6e;
+  --navy-mid:    #294463;
+  --navy-dark:   #1b3048;
+  --sky:         #b2d5f1;
+  --sky-light:   #c8e2f6;
+  --sky-dark:    #9cc5e8;
+  --cream:       #e1d5cf;
+  --cream-dim:   rgba(225, 213, 207, 0.15);
+  --cream-hint:  rgba(225, 213, 207, 0.06);
+  --cream-section: rgba(225, 213, 207, 0.08);
+  --navy-warm:   #2f4a66;
+  --white:       #F0EDE8;
+  --white-pure:  #ffffff;
+  --white-dim:   rgba(240, 237, 232, 0.65);
+  --white-faint: rgba(240, 237, 232, 0.07);
+  --accent-line: rgba(240, 237, 232, 0.1);
+  --accent-warm: rgba(225, 213, 207, 0.12);
 
   /* Typography */
   --font-family: 'Montserrat', sans-serif;
@@ -25,6 +36,11 @@
   --spacing-2xl: 96px;
 
   /* Layout */
-  --header-height: 72px;
+  --header-height: 82px;
   --section-padding-x: 10%;
+
+  /* Soft radius */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
 }
